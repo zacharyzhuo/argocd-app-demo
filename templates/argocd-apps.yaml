@@ -9,7 +9,7 @@ spec:
   project: argocd
   source:
     path: apps
-    repoURL: git@github.com/zacharyzhuo/argocd-app-demo.git
+    repoURL: git@github.com:zacharyzhuo/argocd-app-demo.git
     targetRevision: master
   destination:
     server: https://kubernetes.default.svc
