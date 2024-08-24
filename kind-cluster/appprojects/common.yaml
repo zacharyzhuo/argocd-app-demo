@@ -1,0 +1,61 @@
+apiVersion: argoproj.io/v1alpha1
+kind: AppProject
+metadata:
+  name: common
+  namespace: argocd
+spec:
+  description: Common Project
+  clusterResourceWhitelist:
+    - group: "*"
+      kind: "*"
+  destinations:
+    - namespace: kube-system
+      server: https://kubernetes.default.svc
+    - namespace: swagger-ui
+      server: https://kubernetes.default.svc
+    - namespace: loki
+      server: https://kubernetes.default.svc
+    - namespace: prometheus-thanos
+      server: https://kubernetes.default.svc
+    - namespace: debug
+      server: https://kubernetes.default.svc
+    - namespace: efs-provisioner
+      server: https://kubernetes.default.svc
+    - namespace: external-dns
+      server: https://kubernetes.default.svc
+    - namespace: ingress-nginx
+      server: https://kubernetes.default.svc
+    - namespace: ingress-nginx-internet
+      server: https://kubernetes.default.svc
+    - namespace: karpenter
+      server: https://kubernetes.default.svc
+    - namespace: kube-node-lease
+      server: https://kubernetes.default.svc
+    - namespace: api-server-nginx
+      server: https://kubernetes.default.svc
+    - namespace: sonarqube-ee
+      server: https://kubernetes.default.svc
+    - namespace: keda
+      server: https://kubernetes.default.svc
+    - namespace: tempo
+      server: https://kubernetes.default.svc
+    - namespace: opentelemetry
+      server: https://kubernetes.default.svc
+    - namespace: prometheus-blackbox-exporter
+      server: https://kubernetes.default.svc
+    - namespace: kubecost
+      server: https://kubernetes.default.svc
+    - namespace: promtail
+      server: https://kubernetes.default.svc
+    - namespace: vector
+      server: https://kubernetes.default.svc
+    - namespace: cloudzero
+      server: https://kubernetes.default.svc
+    - namespace: alloy
+      server: https://kubernetes.default.svc
+    - namespace: s3-sync
+      server: https://kubernetes.default.svc
+  orphanedResources:
+    warn: false
+  sourceRepos:
+    - "*"
