@@ -1,14 +1,14 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: app
+  name: apps
   finalizers:
   - resources-finalizer.argocd.argoproj.io
 spec:
   project: default
   source:
     repoURL: https://github.com/zacharyzhuo/argocd-app-demo.git
-    path: charts/app/
+    path: charts/apps/
     targetRevision: HEAD
   destination:
     server: https://kubernetes.default.svc
