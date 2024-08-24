@@ -13,10 +13,6 @@ spec:
     helm:
       releaseName: namespaces
       values: |
-        resources:
-          - apiVersion: v1
-            kind: Namespace
-              name: prometheus
         pushgateway:
           enabled: false
   destination:
@@ -26,3 +22,5 @@ spec:
     automated:
       prune: true
       selfHeal: true
+    syncOptions:
+      - CreateNamespace=true
